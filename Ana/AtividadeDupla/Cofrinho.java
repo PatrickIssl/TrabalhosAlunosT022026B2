@@ -1,3 +1,4 @@
+package Ana.AtividadeDupla;
 
 public class Cofrinho {
     private String dono;
