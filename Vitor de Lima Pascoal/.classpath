@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="Arrayaula/src"/>
-	<classpathentry kind="src" path="classeEstacionamento/src"/>
-	<classpathentry kind="src" path="maquinaClasse/src"/>
-	<classpathentry kind="src" path="menujava2/src"/>
-	<classpathentry kind="output" path="Arrayaula/bin"/>
-</classpath>

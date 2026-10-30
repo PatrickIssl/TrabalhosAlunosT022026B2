@@ -13,11 +13,7 @@ public class Principal {
 
         while (opcao != 4) {
             System.out.println("\nEscolha uma opção:");
-<<<<<<< HEAD
             System.out.println("1 - Comprar rfrigerante");
-=======
-            System.out.println("1 - Comprar refrigerante");
->>>>>>> 63d221ef8b4553ee5cf1b98e83d65bb2c2d470ee
             System.out.println("2 - Repor estoque");
             System.out.println("3 - Exibir estado da máquina");
             System.out.println("4 - Sair");
@@ -53,8 +49,4 @@ public class Principal {
 
         scanner.close();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 63d221ef8b4553ee5cf1b98e83d65bb2c2d470ee
