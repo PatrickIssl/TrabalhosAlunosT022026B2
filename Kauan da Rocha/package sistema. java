@@ -1,0 +1,225 @@
+package sistema;
+
+import java.util.ArrayList; // lista que cresce sozinha
+import java.util.Scanner;   // lê o teclado
+
+public class Principal {
+
+	// Lista que guarda os objetos Produto
+	static ArrayList<Produto> produtos = new ArrayList<>();
+
+	// Leitor do teclado
+	static Scanner sc = new Scanner(System.in);
+
+	// Gera ID único: só aumenta, nunca repete
+	static int proximoId = 1;
+
+	//  INÍCIO DO PROGRAMA 
+	public static void main(String[] args) {
+		int opcao;
+
+		// do-while: mostra o menu pelo menos 1 vez e repete até digitar 0
+		do {
+			exibirMenu();
+			opcao = lerInteiro("Escolha uma opção: ");
+
+			// switch: chama o método de cada opção.
+			switch (opcao) {
+			case 1:
+				cadastrar();
+				break;
+			case 2:
+				listar();
+				break;
+			case 3:
+				buscar();
+				break;
+			case 4:
+				atualizar();
+				break;
+			case 5:
+				excluir();
+				break;
+			case 0:
+				System.out.println("Encerrando o sistema... Até logo!");
+				break;
+			default: // opção inválida
+				System.out.println("Opção inválida, tente novamente");
+			}
+
+		} while (opcao != 0);
+
+		sc.close(); // fecha o Scanner
+	}
+
+	//  MOSTRA O MENU 
+	public static void exibirMenu() {
+		System.out.println();
+		System.out.println("========== SISTEMA DE GERENCIAMENTO ==========");
+		System.out.println();
+		System.out.println("1 - Cadastrar");
+		System.out.println("2 - Listar todos");
+		System.out.println("3 - Buscar por ID");
+		System.out.println("4 - Atualizar");
+		System.out.println("5 - Excluir");
+		System.out.println("0 - Sair");
+		System.out.println();
+	}
+
+	//  1 - CADASTRAR
+	public static void cadastrar() {
+		System.out.println("\n--- CADASTRAR PRODUTO ---");
+
+		System.out.print("Nome: ");
+		String nome = sc.nextLine();
+
+		double preco = lerDouble("Preço: ");
+
+		// Cria o OBJETO usando o CONSTRUTOR
+		Produto p = new Produto(proximoId, nome, preco);
+		produtos.add(p); // adiciona na lista
+		proximoId++;     // prepara o próximo ID
+
+		System.out.println("Produto cadastrado com sucesso! ID: " + p.getId()); // getter
+	}
+
+	// 2 - LISTAR
+	public static void listar() {
+		System.out.println("\n--- LISTA DE PRODUTOS ---");
+
+		if (produtos.isEmpty()) { // lista vazia
+			System.out.println("Nenhum produto cadastrado.");
+		} else {
+			// for-each: percorre cada produto da lista
+			for (Produto p : produtos) {
+				System.out.println(p); // chama o toString()
+			}
+		}
+	}
+
+	// Procura produto pelo ID 
+	// Retorna o produto, ou null se não achar
+	// Reaproveitado em buscar, atualizar e excluir
+	public static Produto buscarProdutoPorId(int id) {
+		for (Produto p : produtos) {
+			if (p.getId() == id) {
+				return p; // achou
+			}
+		}
+		return null; // não achou
+	}
+
+	// 3 - BUSCAR
+	public static void buscar() {
+		System.out.println("\n--- BUSCAR PRODUTO ---");
+
+		if (produtos.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado.");
+			return; // sai do método
+		}
+
+		int id = lerInteiro("Digite o ID: ");
+
+		Produto p = buscarProdutoPorId(id);
+
+		if (p == null) { // ID não existe
+			System.out.println("Produto com ID " + id + " não encontrado.");
+		} else {
+			System.out.println("Produto encontrado:");
+			System.out.println(p);
+		}
+	}
+
+	//  4 - ATUALIZAR
+	public static void atualizar() {
+		System.out.println("\n--- ATUALIZAR PRODUTO ---");
+
+		if (produtos.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado.");
+			return;
+		}
+
+		int id = lerInteiro("Digite o ID do produto: ");
+
+		Produto p = buscarProdutoPorId(id);
+
+		if (p == null) {
+			System.out.println("Produto com ID " + id + " não encontrado.");
+			return;
+		}
+
+		System.out.println("Dados atuais: " + p);
+
+		System.out.print("Novo nome: ");
+		String novoNome = sc.nextLine();
+
+		double novoPreco = lerDouble("Novo preço: ");
+
+		// SETTERS: alteram o objeto (o mesmo que está na lista)
+		p.setNome(novoNome);
+		p.setPreco(novoPreco);
+
+		System.out.println("Produto atualizado com sucesso!");
+		System.out.println("Novos dados: " + p);
+	}
+
+	// 5 - EXCLUIR 
+	public static void excluir() {
+		System.out.println("\n--- EXCLUIR PRODUTO ---");
+
+		if (produtos.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado.");
+			return;
+		}
+
+		int id = lerInteiro("Digite o ID do produto: ");
+
+		Produto p = buscarProdutoPorId(id);
+
+		if (p == null) {
+			System.out.println("Produto com ID " + id + " não encontrado.");
+			return;
+		}
+
+		System.out.println("Produto encontrado: " + p);
+		System.out.print("Tem certeza que deseja excluir? (S/N): ");
+		String resposta = sc.nextLine();
+
+		// equalsIgnoreCase: compara texto aceitando S ou s
+		if (resposta.equalsIgnoreCase("S")) {
+			produtos.remove(p); // remove da lista
+			System.out.println("Produto excluído com sucesso!");
+		} else {
+			System.out.println("Exclusão cancelada.");
+		}
+	}
+
+	// TRATAMENTO DE ERRO: lê número inteiro
+	// Repete até o usuário digitar um número válido
+	public static int lerInteiro(String mensagem) {
+		while (true) {
+			System.out.print(mensagem);
+			String entrada = sc.nextLine();
+			try {
+				return Integer.parseInt(entrada.trim()); // texto -> int
+			} catch (NumberFormatException e) { // digitou letra
+				System.out.println("Valor inválido! Digite um número inteiro.");
+			}
+		}
+	}
+
+	//  TRATAMENTO DE ERRO: lê número decimal 
+	// Aceita vírgula ou ponto (troca , por .)
+	public static double lerDouble(String mensagem) {
+		while (true) {
+			System.out.print(mensagem);
+			String entrada = sc.nextLine();
+			try {
+				return Double.parseDouble(entrada.trim().replace(",", ".")); // texto -> double
+			} catch (NumberFormatException e) {
+				System.out.println("Valor inválido! Digite um número (ex: 10,50).");
+			}
+		}
+	}
+
+}
