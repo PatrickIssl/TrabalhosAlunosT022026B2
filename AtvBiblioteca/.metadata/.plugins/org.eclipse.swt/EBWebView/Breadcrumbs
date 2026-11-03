@@ -1,0 +1,53 @@
+3:44:43 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+3:44:43 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+3:44:43 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+3:44:43 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+3:44:43 Widget Closed: WebView2MinimalFrame
+3:44:43 Microsoft.UnloadController.TabStripEmpty
+3:44:43 Widget Closed: WebView2MinimalFrame
+3:44:43 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+3:44:43 Microsoft.Shutdown.OnWindowClosing
+3:44:43 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
+3:44:43 Microsoft.Browser_Removed
+3:44:43 Widget Closed: WebView2MinimalFrame
+3:45:04 Microsoft.BrowserList.AddBrowser
+3:45:04 Browser36 Insert active Tab36 at 0
+3:45:04 Tab36 StartNav504 #auto_toplevel
+3:45:04 Tab36 StartNav505 #typed
+3:45:04 Tab36 FinishNav504
+3:45:04 Tab36 PageLoad
+3:45:04 Tab36 FinishNav505
+3:45:04 Tab36 PageLoad
+3:45:04 Tab36 StartNav506 #typed
+3:45:04 Tab36 FinishNav506
+3:45:04 Tab36 PageLoad
+3:45:16 Tab36 StartNav507 #typed
+3:45:16 Tab36 FinishNav507
+3:45:16 Tab36 PageLoad
+3:45:40 Tab36 StartNav508 #typed
+3:45:40 Tab36 FinishNav508
+3:45:40 Tab36 PageLoad
+3:45:43 Tab36 StartNav509 #typed
+3:45:43 Tab36 FinishNav509
+3:45:43 Tab36 PageLoad
+3:45:55 Tab36 StartNav510 #typed
+3:45:55 Tab36 FinishNav510
+3:45:55 Tab36 PageLoad
+3:45:55 Tab36 StartNav511 #typed
+3:45:55 Tab36 FinishNav511
+3:45:55 Tab36 PageLoad
+3:46:48 Tab36 StartNav512 #typed
+3:46:48 Tab36 FinishNav512
+3:46:48 Tab36 PageLoad
+3:46:53 Tab7 StartNav513 #typed
+3:46:53 Tab7 FinishNav513
+3:46:53 Tab7 PageLoad
+3:46:56 Tab7 StartNav514 #typed
+3:46:56 Tab7 FinishNav514
+3:46:56 Tab7 PageLoad
+3:47:11 Tab8 StartNav515 #typed
+3:47:11 Tab8 FinishNav515
+3:47:11 Tab8 PageLoad
+3:47:16 Tab8 StartNav516 #typed
+3:47:16 Tab8 FinishNav516
+3:47:16 Tab8 PageLoad

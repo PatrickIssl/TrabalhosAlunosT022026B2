@@ -1,0 +1,34 @@
+package fag.Objetos;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+import fag.Objetos.Livro;
+import fag.Objetos.Pessoa;
+
+
+public class Pessoa {
+
+	static Scanner scan = new Scanner(System.in);
+
+	static List<Livro> listaFilmes = new ArrayList<Livro>();
+	static List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+
+	public static void main(String[] args) {
+		
+	}
+	
+	private static void popularTabela() {
+		listaUsuarios.add(new Pessoa("Gustavo"));
+		listaUsuarios.add(new Pessoa("Gabriel"));
+		listaUsuarios.add(new Pessoa("Pedro"));
+		listaUsuarios.add(new Pessoa("Joao"));
+		listaUsuarios.add(new Pessoa("Julio"));
+		listaUsuarios.add(new Pessoa("Fabio"));
+		listaUsuarios.add(new Pessoa("Delcio"));
+	}
+	
+	
+}

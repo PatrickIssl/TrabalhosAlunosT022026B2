@@ -1,0 +1,16 @@
+package fag.Objetos;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+import fag.Objetos.Livro;
+import fag.Objetos.Pessoa;
+
+
+public class Pessoa {
+
+	static Scanner scan = new Scanner(System.in);
+
+}

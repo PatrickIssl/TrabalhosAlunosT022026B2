@@ -1,0 +1,78 @@
+package fag;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import package fagObjetos.Produto.java;
+
+
+public class Principal {
+
+	static Scanner scan = new Scanner(System.in);
+	static List<Produto> listaProdutos = new  ArrayList<Produto>();
+
+	public static void main(String[] args) {
+		tabela();
+		System.out.println("-----------Sistema iniciado-----------");
+		mostrarMenu();
+	}
+
+	private static void mostrarMenu() {
+		int escolhaUsuario = 0;
+		do {
+
+			System.out.println("---------Selecione uma das opções---------");
+			System.out.println("1- Cadastrar produto ");
+			System.out.println("2- Listar todos produtos ");
+			System.out.println("3- Buscar ID do produto ");
+			System.out.println("4- Atulizar produto");
+			System.out.println("5- Excluir");
+			System.out.println("0- Sair");
+			escolhaUsuario = scan.nextInt();
+			scan.nextLine();
+			validarEscolha(escolhaUsuario);
+
+		} while(escolhaUsuario != 0);
+	}
+
+	private static void validarEscolha(int escolhaUsuario) {
+		switch (escolhaUsuario) {
+		case 0: {
+			System.out.println("Sistema encerrado. Obrigado por utilizar!");
+			break;
+		}
+		case 1: {
+
+			break;
+		}
+		case 2: {
+
+			break;
+		}
+		case 3: {
+
+			break;
+		}
+		case 4: {
+
+			break;
+		}
+		case 5: {
+
+			break;
+		}
+
+		default:
+			System.out.println("Informe um valor válido!");
+		}
+	}
+
+	private static void tabela() {
+		listaProdutos.add(new Produto("Gustavo"));
+		
+	}
+
+}
+
+

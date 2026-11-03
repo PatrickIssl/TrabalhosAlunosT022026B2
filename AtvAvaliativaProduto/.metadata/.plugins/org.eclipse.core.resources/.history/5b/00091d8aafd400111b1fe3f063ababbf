@@ -1,0 +1,15 @@
+package fagObjetos;
+
+public class Produto {
+
+	private int id;
+	private String nome;
+	private double preco;
+	
+	public Produto() {	
+	}
+	
+	public Produto (int id, String nome, double preco) {
+		
+	}
+}

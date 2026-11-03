@@ -1,0 +1,46 @@
+package fag.Objetos;
+
+public class Livro {
+
+private String nome;
+private String genero;
+private Date dataLocacao;
+
+public Livro() {
+}
+
+public Livro(String nome, String genero) {
+	this.nome = nome;
+	this.genero = genero;
+}
+
+public String getNome() {
+	return nome;
+}
+public void setNome(String nome) {
+	this.nome = nome;
+}
+public String getGenero() {
+	return genero;
+}
+public void setGenero(String genero) {
+	this.genero = genero;
+}
+public Date getDataLocacao() {
+	return dataLocacao;
+}
+public void setDataLocacao(Date dataLocacao) {
+	this.dataLocacao = dataLocacao;
+}
+
+public String validarDisponibilidade() {
+    String VERDE = "\u001B[32m";
+    String VERMELHO = "\u001B[31m";
+    String RESET = "\u001B[0m";
+	if(dataLocacao == null) {
+		return VERDE+"Disponivel"+RESET;
+	}else {
+		return VERMELHO+"Indisponivel"+RESET;
+	}
+}
+}
