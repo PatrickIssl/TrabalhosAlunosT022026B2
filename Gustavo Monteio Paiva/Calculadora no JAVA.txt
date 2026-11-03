@@ -1,0 +1,79 @@
+﻿CALCULADORA JAVA
+
+
+Nome: Guilherme da Rocha de Oliveira            Curso: Engenharia de Software
+Turma: T04 - Noturno
+Data: 05/08/26
+
+
+
+
+Soma:
+
+
+  
+
+
+
+Subtração:
+
+
+  
+
+
+
+Divisão:
+
+
+  
+
+
+
+
+
+Multiplicação:
+  
+
+
+
+
+
+Código:
+
+
+import java.util.Scanner;
+
+
+public class Calculadora{
+        public static void main(String [] args){
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Calculadora, escolha o primeiro numero");
+        int v1 = scanner.nextInt();
+        System.out.println("Escolha o segundo numero");
+        int v2 = scanner.nextInt();
+        System.out.println("Selecione uma das opces:");
+        System.out.println("-------------------------");
+        System.out.println(" 1- Soma (+)");
+        System.out.println(" 2- Subtraco (-)");
+        System.out.println(" 3- Divisao (/)");
+        System.out.println(" 4- Multiplicaco (*)");
+        System.out.println("--------------------------");
+        int v3 = scanner.nextInt();
+        System.out.println("O resultado e:");
+        if (v3 ==1){
+        System.out.println (v1 + v2);
+        }
+        if (v3 ==2){
+        System.out.println (v1 - v2);
+        }
+        if (v3 ==3){
+        System.out.println (v1 / v2);
+        }
+        if (v3 ==4){
+        System.out.println (v1 * v2);
+        }
+
+
+        
+}
+}

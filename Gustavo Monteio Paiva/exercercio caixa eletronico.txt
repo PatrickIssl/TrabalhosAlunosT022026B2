@@ -1,0 +1,154 @@
+﻿import java.util.Scanner;
+
+
+public class CaixaEletronico {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        String SenhaCorreta = "1234";
+        int tentativasSenha = 0;
+        boolean autenticado = false;
+
+
+        double saldo = 0.0;
+        double limiteDiarioSaque = 500.0;
+        double totalSacado = 0.0;
+
+
+        System.out.println("Bem vindo");
+
+
+        while (tentativasSenha < 3) {
+
+
+            System.out.print("Digite sua senha de 4 dígitos: ");
+            String senhaDigitada = scanner.nextLine();
+
+
+            if (senhaDigitada.equals(SenhaCorreta)) {
+                autenticado = true;
+                System.out.println("Acesso liberado");
+                break;
+
+
+            } else {
+                tentativasSenha++;
+
+
+                int restantes = 3 - tentativasSenha;
+
+
+                if (restantes > 0) {
+                    System.out.println("Senha incorreta. Você ainda tem "
+                            + restantes + " tentativa(s)");
+                } else {
+                    System.out.println("Número máximo de tentativas excedido");
+                }
+            }
+        }
+
+
+        if (autenticado) {
+
+
+            int opcao = 0;
+
+
+            while (opcao != 4) {
+
+
+                System.out.println("\n1 - Consultar Saldo");
+                System.out.println("2 - Depositar Dinheiro");
+                System.out.println("3 - Sacar Dinheiro");
+                System.out.println("4 - Sair");
+                System.out.print("Escolha uma opção: ");
+
+
+                if (scanner.hasNextInt()) {
+                    opcao = scanner.nextInt();
+                    scanner.nextLine();
+                } else {
+                    System.out.println("Erro: Digite apenas números inteiros!");
+                    scanner.nextLine();
+                    continue;
+                }
+                switch (opcao) {
+
+
+                    case 1:
+                        System.out.printf("Saldo atual: R$ %.2f%n", saldo);
+                        break;
+
+
+                    case 2:
+                        System.out.print("Digite o valor do depósito: R$ ");
+                        double deposito = scanner.nextDouble();
+
+
+                        if (deposito <= 0) {
+                            System.out.println("Valor inválido. "
+                                    + "O depósito deve ser maior que zero.");
+                        } else {
+                            saldo = saldo + deposito;
+
+
+                            System.out.println("Depósito realizado com sucesso!");
+                            System.out.printf("Novo saldo: R$ %.2f%n", saldo);
+                        }
+                        break;
+
+
+                    case 3:
+                        System.out.print("Digite o valor do saque: R$ ");
+                        double saque = scanner.nextDouble();
+
+
+                        if (saque <= 0) {
+                            System.out.println("Valor inválido. " + "O saque deve ser maior que zero.");
+
+
+                        } else if (saque > saldo) {
+                            System.out.println("Saldo insuficiente");
+
+
+                        } else if (totalSacado + saque > limiteDiarioSaque) {
+                            System.out.println("Limite de saque diário excedido.");
+                            System.out.printf("Limite diário: R$ %.2f%n",
+                                    limiteDiarioSaque);
+
+
+                        } else {
+                            saldo = saldo - saque;
+                            totalSacado = totalSacado + saque;
+
+
+                            System.out.println("Saque realizado com sucesso!");
+                            System.out.printf("Saldo restante: R$ %.2f%n", saldo);
+                        }
+                        break;
+
+
+                    case 4:
+                        System.out.println("Acesso encerrado!");
+                        break;
+
+
+                    default:
+                        System.out.println("Opção invalida. "
+                                + "Escolha uma opção de 1 a 4.");
+                        break;
+                }
+            }
+
+
+        } else {
+            System.out.println("Acesso negado. Encerrando programa.");
+        }
+
+
+        scanner.close();
+    }
+}
