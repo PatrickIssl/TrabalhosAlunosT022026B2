@@ -1,4 +1,4 @@
-package sistemajoguito;
+package sistemajogo;
 
 public class Jogo {
     private int id;
