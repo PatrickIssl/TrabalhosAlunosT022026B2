@@ -1,4 +1,4 @@
-package sistemajoguito;
+package sistemajogo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
