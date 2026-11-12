@@ -1,3 +1,5 @@
+package Ana.AtividadeDupla;
+
 public class Pedido {
     private String nome;
     private int qtd;

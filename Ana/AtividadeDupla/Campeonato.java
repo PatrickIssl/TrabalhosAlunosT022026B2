@@ -1,3 +1,4 @@
+package Ana.AtividadeDupla;
 
 public class Campeonato {
 	private String nome;

@@ -1,3 +1,5 @@
+
+
 public class Cadastro {
     private final String nome;
     private int idade;
