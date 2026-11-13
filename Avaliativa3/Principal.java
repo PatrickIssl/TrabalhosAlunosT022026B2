@@ -79,7 +79,7 @@ public class Principal {
         boolean encontrado = false;
 
         for (int i = 0; i < funcionarios.size(); i++) {
-
+        
             if (funcionarios.get(i).getId() == idBusca) {
 
                 funcionarios.remove(i);
