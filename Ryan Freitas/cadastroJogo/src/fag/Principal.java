@@ -23,11 +23,11 @@ public class Principal {
 
         do {
             System.out.println("\n------ SISTEMA DE GERENCIAMENTO ------");
-            System.out.println("1 - Cadastrar produto");
-            System.out.println("2 - Listar produtos");
+            System.out.println("1 - Cadastrar");
+            System.out.println("2 - Listar");
             System.out.println("3 - Buscar por ID");
-            System.out.println("4 - Atualizar produto");
-            System.out.println("5 - Excluir produto");
+            System.out.println("4 - Atualizar");
+            System.out.println("5 - Excluir");
             System.out.println("0 - Sair");
 
             System.out.print("Escolha uma opção: ");
