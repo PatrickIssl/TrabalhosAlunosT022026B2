@@ -75,7 +75,7 @@ public class Principal {
             System.out.println("\nJogo encontrado!");
             System.out.println("ID: " + jogo.getId());
             System.out.println("Nome: " + jogo.getNome());
-            System.out.printf("Preço: R$ %.2f\n", jogo.getGenero());
+            System.out.printf("Genero: %s\n", jogo.getGenero());
 
         } else {
             System.out.println("Jogo não encontrado!");
@@ -142,7 +142,7 @@ public class Principal {
 	}
 
 	private static void cadastrarJogo() {
-		System.out.print("Informe o ID do produto(Apenas numeros): ");
+		System.out.print("Informe o ID do jogo(Apenas numeros): ");
         int id = scan.nextInt();
         scan.nextLine();
 
@@ -166,7 +166,7 @@ public class Principal {
 
         listaJogos.add(jogo);
 
-        System.out.println("Produto cadastrado com sucesso!");
+        System.out.println("Jogo cadastrado com sucesso!");
 	}
 
 	private static void tabelaInputs() {
